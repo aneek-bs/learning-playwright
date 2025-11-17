@@ -1,6 +1,6 @@
 const { test, expect } = require('@playwright/test');
 
-test('Demo to understand special locators', async ({ page }) => {
+test('Sec 8- Playwright Unique getBy Locators', async ({ page }) => {
   await page.goto('https://rahulshettyacademy.com/angularpractice/');
 
   //getByLabel - works great with checkboxes, radio buttons and selecting options from dropdowns
@@ -30,7 +30,7 @@ test('Demo to understand special locators', async ({ page }) => {
     .click(); //Click on 'Add' button once inside the concerned card
 });
 
-test('Calendar Selections', async ({ page }) => {
+test('Sec 8- Calendar Selections', async ({ page }) => {
   const monthNumber = '6';
   const date = '10';
   const year = '1975';
@@ -65,4 +65,29 @@ test('Calendar Selections', async ({ page }) => {
   for (let i = 0; i < (await inputs.count()); i++) {
     expect(await inputs.nth(i).getAttribute('value')).toEqual(expectedDate[i]);
   }
+});
+
+test('Sec 9- Handling Web Dialogues, Frames and Event Listeners', async ({
+  page,
+}) => {
+  await page.goto('https://rahulshettyacademy.com/AutomationPractice/');
+
+  //Some more assertions
+  await expect(page.locator('#displayed-text')).toBeVisible();
+  await page.locator('#hide-textbox').click();
+  await expect(page.locator('#displayed-text')).toBeHidden();
+
+  //Accepting dialogue boxes
+  page.on('dialog', (dialog) => dialog.accept());
+  await page.locator('#confirmbtn').click();
+
+  //Hover over an item
+  await page.locator('#mousehover').hover();
+
+  //handling frames
+  const childPage = page.frameLocator('#courses-iframe');
+  await childPage.locator('a[href*="all-access-subscription"]').first().click();
+  await expect(childPage.locator('.hero-shapes div span')).toHaveText(
+    'Premium Access Plans'
+  );
 });
