@@ -31,6 +31,8 @@ test('Sec 10- Client App End to End using API', async ({ page }) => {
 
   //Now go to my orders
   await page.locator('button[routerlink*="myorders"]').click();
+
+  console.log(response.orderId);
   await page.waitForLoadState('networkidle');
   await page.locator('tbody tr').first().waitFor();
 
