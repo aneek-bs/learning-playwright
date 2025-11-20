@@ -1,5 +1,5 @@
 const { test, expect, request } = require('@playwright/test');
-const { APIUtils } = require('./utils/APIUtils');
+const { APIUtils } = require('../utils/APIUtils');
 //{APIUtils} fetches the class. If we import just APIUtils, it will fetch the entire object whose property is the class
 
 const loginPayload = {
