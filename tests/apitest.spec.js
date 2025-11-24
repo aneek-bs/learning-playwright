@@ -21,7 +21,7 @@ test.beforeAll(async () => {
   response = await apiUtils.getOrderId(orderPayload); //Fetch the response object {orderId:..., token:..}
 });
 
-test('Sec 10- Client App End to End using API', async ({ page }) => {
+test('@api Sec 10- Client App End to End using API', async ({ page }) => {
   //Login by injecting into the local storage
   await page.addInitScript((value) => {
     window.localStorage.setItem('token', value);

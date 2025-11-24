@@ -22,7 +22,7 @@ test.beforeAll(async ({ browser }) => {
   webContext = await browser.newContext({ storageState: 'state.json' });
 });
 
-test('Sec 11- End to End Test', async () => {
+test('@api Sec 11- End to End Test', async () => {
   const productName = 'ZARA COAT 3';
 
   //Open a new page with the context having login storage data
@@ -106,7 +106,7 @@ test('Sec 11- End to End Test', async () => {
   ).toBeTruthy();
 });
 
-test('Sec 11- Test Only Upto Checkout', async () => {
+test('@api Sec 11- Test Only Upto Checkout', async () => {
   const productName = 'ZARA COAT 3';
 
   //Open a new page with the context having login storage data

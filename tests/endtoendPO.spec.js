@@ -8,7 +8,7 @@ const dataSet = JSON.parse(
 
 //Run a test with different sets of data (as obtained from the JSON file)
 for (const data of dataSet) {
-  test(`Sec 14- End to End Test Using Page Object ${data.productName}`, async ({
+  test(`@web Sec 14- End to End Test Using Page Object ${data.productName}`, async ({
     page,
   }) => {
     const poManager = new POManager(page);
@@ -48,7 +48,7 @@ for (const data of dataSet) {
 
 //A custom test which has original test plus a fixture containing all the test data (as imported from test-base)
 customTest(
-  'Sec 14- Client App Login using test data fixture',
+  '@web Sec 14- Client App Login using test data fixture',
   async ({ page, testDataForOrder }) => {
     const poManager = new POManager(page);
 

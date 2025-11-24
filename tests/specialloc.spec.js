@@ -1,6 +1,6 @@
 const { test, expect } = require('@playwright/test');
 
-test('Sec 8- Playwright Unique getBy Locators', async ({ page }) => {
+test('@web Sec 8- Playwright Unique getBy Locators', async ({ page }) => {
   await page.goto('https://rahulshettyacademy.com/angularpractice/');
 
   //getByLabel - works great with checkboxes, radio buttons and selecting options from dropdowns
@@ -30,7 +30,7 @@ test('Sec 8- Playwright Unique getBy Locators', async ({ page }) => {
     .click(); //Click on 'Add' button once inside the concerned card
 });
 
-test('Sec 8- Calendar Selections', async ({ page }) => {
+test('@web Sec 8- Calendar Selections', async ({ page }) => {
   const monthNumber = '6';
   const date = '10';
   const year = '1975';
@@ -67,7 +67,7 @@ test('Sec 8- Calendar Selections', async ({ page }) => {
   }
 });
 
-test('Sec 9- Handling Web Dialogues, Frames and Event Listeners', async ({
+test('@web Sec 9- Handling Web Dialogues, Frames and Event Listeners', async ({
   page,
 }) => {
   await page.goto('https://rahulshettyacademy.com/AutomationPractice/');

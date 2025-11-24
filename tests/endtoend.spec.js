@@ -1,6 +1,6 @@
 const { test, expect } = require('@playwright/test');
 
-test('Sec 7- End to End Test', async ({ page }) => {
+test('@web Sec 7- End to End Test', async ({ page }) => {
   const productName = 'ZARA COAT 3';
   const products = page.locator('.card-body');
 
@@ -87,7 +87,7 @@ test('Sec 7- End to End Test', async ({ page }) => {
   ).toBeTruthy();
 });
 
-test('Sec 8- End to End Test using special locators', async ({ page }) => {
+test('@web Sec 8- End to End Test using special locators', async ({ page }) => {
   const productName = 'ZARA COAT 3';
   const products = await page.locator('.card-body');
 

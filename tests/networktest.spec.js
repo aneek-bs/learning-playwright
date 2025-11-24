@@ -1,5 +1,5 @@
 const { test, expect, request } = require('@playwright/test');
-const { APIUtils } = require('./utils/APIUtils');
+const { APIUtils } = require('../utils/APIUtils');
 //{APIUtils} fetches the class. If we import just APIUtils, it will fetch the entire object whose property is the class
 
 const loginPayload = {
@@ -23,7 +23,7 @@ test.beforeAll(async () => {
   response = await apiUtils.getOrderId(orderPayload); //Fetch the response object {orderId:..., token:..}
 });
 
-test('Sec 12- Intercepting Network and creating a fake empty page scenario', async ({
+test('@network Sec 12- Intercepting Network and creating a fake empty page scenario', async ({
   page,
 }) => {
   //Login by injecting into the local storage
@@ -68,7 +68,7 @@ test('Sec 12- Intercepting Network and creating a fake empty page scenario', asy
   );
 });
 
-test('Sec 12- Security Test Request Intercept', async ({ page }) => {
+test('@network Sec 12- Security Test Request Intercept', async ({ page }) => {
   await page.addInitScript((value) => {
     window.localStorage.setItem('token', value);
   }, response.token); //Fetch the token property from response object
@@ -97,7 +97,7 @@ test('Sec 12- Security Test Request Intercept', async ({ page }) => {
   );
 });
 
-test.only('Sec12- Aborting Network Response', async ({ page }) => {
+test.only('@network Sec12- Aborting Network Response', async ({ page }) => {
   await page.route('**/*.css', (route) => {
     route.abort();
   });
