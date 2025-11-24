@@ -97,7 +97,7 @@ test('@network Sec 12- Security Test Request Intercept', async ({ page }) => {
   );
 });
 
-test.only('@network Sec12- Aborting Network Response', async ({ page }) => {
+test('@network Sec12- Aborting Network Response', async ({ page }) => {
   await page.route('**/*.css', (route) => {
     route.abort();
   });
